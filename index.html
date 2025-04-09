@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PerPor</title>
+  <title>Yuri Santos | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="index.css">
-</head>
 
+</head>
 <body>
   <!-- Navigation -->
-  <nav>
+  <nav id="navbar">
     <div class="logo">yrui</div>
     <ul class="nav-links">
       <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
@@ -25,52 +25,211 @@
       <span class="bar"></span>
     </div>
   </nav>
-
+  
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>Hi, I'm <span class="highlight">Yuri Santos</span></h1>
-      <p class="role">A passionate <span class="highlight">[Your Role]</span></p>
-      <a href="#projects" class="btn">View My Work</a>
+      <h1 class="animate__animated animate__fadeInDown">Hi, I'm <span class="highlight">Yuri Santos</span></h1>
+      <p class="role animate__animated animate__fadeIn">A passionate <span class="highlight typewriter" id="role-text">Web Developer</span></p>
+      <a href="#projects" class="btn animate__animated animate__fadeInUp"><i class="fas fa-eye"></i> View My Work</a>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="scroll-down" id="scroll-down">
+      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
-
+  
   <!-- About Section -->
   <section id="about" class="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <img src="assets/your-photo.jpg" alt="Your Name" class="profile-img">
-      <div class="bio">
-        <p>I'm a developer/designer specializing in [skills]. I love building [type of projects].</p>
-        <p><strong>Skills:</strong> HTML, CSS, JavaScript, React, etc.</p>
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="profile-img-container">
+          <img src="pic1.jpg" alt="Yuri Santos" class="profile-img">
+        </div>
+        <div class="bio">
+          <h3>Who Am I?</h3>
+          <p>I'm a passionate developer/designer specializing in creating beautiful and functional web experiences. With a keen eye for detail and a love for clean code, I build digital solutions that help businesses grow.</p>
+          <p>My journey in tech began with a fascination for how things work on the web. Today, I combine technical expertise with creative problem-solving to deliver projects that exceed expectations.</p>
+          <h3>My Skills</h3>
+          <div class="skills">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">Git</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
+  
   <!-- Projects Section -->
   <section id="projects" class="projects">
-    <h2>My Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="assets/project1.jpg" alt="Project 1">
-        <h3>Project 1</h3>
-        <p>Description of the project and technologies used.</p>
-        <a href="#" class="btn">View Project</a>
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-img-container">
+            <img src="/api/placeholder/400/320" alt="Project 1">
+            <div class="project-overlay">
+              <div class="project-links">
+                <!-- <a href="#"><i class="fas fa-link"></i></a> -->
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>PyGram</h3>
+            <p>educational game</p>
+            <div class="project-tags">
+              <span class="project-tag">Godot</span>
+              <span class="project-tag">Gdscript</span>
+              <!-- <span class="project-tag">MongoDB</span> -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-img-container">
+            <img src="/api/placeholder/400/320" alt="Project 2">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#"><i class="fas fa-link"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>GRAM Industrial Inc.</h3>
+            <p>website for GRAM</p>
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Firebase</span>
+              <span class="project-tag">CSS</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-img-container">
+            <img src="/api/placeholder/400/320" alt="Project 3">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#"><i class="fas fa-link"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Travel Blog</h3>
+            <p>A responsive travel blog with dynamic content loading, user authentication, and comment system.</p>
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">WordPress</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
+  
   <!-- Contact Section -->
   <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
-    </form>
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Interested?</h3>
+          <p>I'm always open to discussing new projects, creative ideas or opportunities.</p>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <p>Bacoor City, Cavite</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p>yuritsantos00@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Phone</h4>
+              <p>(+63)9150894449</p>
+            </div>
+          </div>
+        </div>
+        
+        <form id="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Subject">
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
+    </div>
   </section>
-
-  <script src="index.js"></script>
-</body>
-</html>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="copyright">© <span id="year">2025</span> Yuri Santos. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  </body>
