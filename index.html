@@ -1,65 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-  <header>
-    <h1>My Portfolio</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">YourName</div>
+    <ul class="nav-links">
+      <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
   <section id="home" class="hero">
-    <h2>Hello, I'm Yuri</h2>
-    <p>A passionate IT student with a love for design & technology.</p>
+    <div class="hero-content">
+      <h1>Hi, I'm <span class="highlight">[Your Name]</span></h1>
+      <p class="role">A passionate <span class="highlight">[Your Role]</span></p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
   </section>
 
+  <!-- About Section -->
   <section id="about" class="about">
-    <h2 class="section-title">About Me</h2>
-    <p>I'm currently pursuing my BS in Information Technology at Cavite State University - Bacoor Campus. I love creating user-friendly websites and solving tech problems through code.</p>
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="assets/your-photo.jpg" alt="Your Name" class="profile-img">
+      <div class="bio">
+        <p>I'm a developer/designer specializing in [skills]. I love building [type of projects].</p>
+        <p><strong>Skills:</strong> HTML, CSS, JavaScript, React, etc.</p>
+      </div>
+    </div>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-grid">
+    <h2>My Projects</h2>
+    <div class="project-grid">
       <div class="project-card">
-        <h3>Project One</h3>
-        <p>A modern responsive website built with HTML, CSS, and JS.</p>
-      </div>
-      <div class="project-card">
-        <h3>Project Two</h3>
-        <p>An interactive to-do list app using JavaScript local storage.</p>
-      </div>
-      <div class="project-card">
-        <h3>Project Three</h3>
-        <p>A student information system using PHP and MySQL.</p>
+        <img src="assets/project1.jpg" alt="Project 1">
+        <h3>Project 1</h3>
+        <p>Description of the project and technologies used.</p>
+        <a href="#" class="btn">View Project</a>
       </div>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Get in touch with me on my socials:</p>
-    <div class="contact-icons">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fas fa-envelope"></i></a>
-    </div>
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+    </form>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Yuri Santos. All rights reserved.</p>
-  </footer>
   <script src="index.js"></script>
 </body>
 </html>
