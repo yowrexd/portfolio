@@ -111,7 +111,7 @@ nav.scrolled {
 
 .nav-links a i {
   margin-right: 5px;
-  color: var(--accent);
+  color: white var(--accent);
 }
 
 .menu-toggle {
@@ -178,7 +178,7 @@ nav.scrolled {
 }
 
 .highlight {
-  color: var(--accent);
+  color: white var(--accent);
   position: relative;
   display: inline-block;
 }
@@ -230,7 +230,7 @@ nav.scrolled {
 }
 
 .btn:hover {
-  background-color: var(--secondary);
+  background-color: var(--accent);
   transform: translateY(-3px);
   box-shadow: 0 7px 20px rgba(67, 97, 238, 0.4);
 }
@@ -320,7 +320,7 @@ nav.scrolled {
 }
 
 .bio {
-  text-align: left;
+  text-align: justify;
 }
 
 .bio h3 {
