@@ -6,19 +6,30 @@
   <title>Yuri Santos | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="index.css">
-
 </head>
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
   <!-- Navigation -->
   <nav id="navbar">
     <div class="logo">yrui</div>
     <ul class="nav-links">
       <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
       <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+      <li><a href="#testimonials"><i class="fas fa-quote-right"></i> Testimonials</a></li>
+      <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
       <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
+    <div class="theme-toggle" id="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </div>
     <div class="menu-toggle" id="mobile-menu">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -31,32 +42,73 @@
     <div class="hero-content">
       <h1 class="animate__animated animate__fadeInDown">Hi, I'm <span class="highlight">Yuri Santos</span></h1>
       <p class="role animate__animated animate__fadeIn">A passionate <span class="highlight typewriter" id="role-text">Web Developer</span></p>
-      <a href="#projects" class="btn animate__animated animate__fadeInUp"><i class="fas fa-eye"></i> View My Projects</a>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn animate__animated animate__fadeInUp"><i class="fas fa-eye"></i> View My Projects</a>
+        <!-- <a href="#contact" class="btn btn-outline animate__animated animate__fadeInUp" style="animation-delay: 0.2s"><i class="fas fa-paper-plane"></i> Contact Me</a> -->
+      </div>
       <div class="social-links">
-        <a href="https://github.com/yowrexd"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/yowrexd/"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/yowrexd/"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/yowrexd" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/yowrexd/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/yowrexd/" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-    <div class="scroll-down" id="scroll-down">
+    <a href="#about" class="scroll-down" id="scroll-down">
       <i class="fas fa-chevron-down"></i>
-    </div>
+    </a>
   </section>
   
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title" data-aos="fade-up">About Me</h2>
       <div class="about-content">
-        <div class="profile-img-container">
+        <div class="profile-img-container" data-aos="fade-right" data-aos-delay="200">
           <img src="pic1.jpg" alt="Yuri Santos" class="profile-img">
         </div>
-        <div class="bio">
+        <div class="bio" data-aos="fade-left" data-aos-delay="300">
           <h3>Who Am I?</h3>
           <p>Hey there! I'm diving into the world of programming and data analysis, driven by a genuine curiosity for how things work. I enjoy writing code, exploring patterns, and building useful tools that help make sense of complex information.</p>
-          <p>It all started with a simple curiosity about how things work behind the screen—and that curiosity quickly turned into a passion. Now, I’m on a journey to sharpen my skills, always learning, always building, and always excited about what comes next.</p>
+          <p>It all started with a simple curiosity about how things work behind the screen—and that curiosity quickly turned into a passion. Now, I'm on a journey to sharpen my skills, always learning, always building, and always excited about what comes next.</p>
+          
           <h3>My Skills</h3>
+          <div class="skills-container">
+            <div class="skill-progress" data-percentage="90">
+              <h4>HTML5/CSS3 <span class="skill-percentage">90%</span></h4>
+              <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+              </div>
+            </div>
+            
+            <div class="skill-progress" data-percentage="85">
+              <h4>JavaScript <span class="skill-percentage">85%</span></h4>
+              <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+              </div>
+            </div>
+            
+            <div class="skill-progress" data-percentage="80">
+              <h4>Python/Django <span class="skill-percentage">80%</span></h4>
+              <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+              </div>
+            </div>
+            
+            <div class="skill-progress" data-percentage="75">
+              <h4>UI/UX Design <span class="skill-percentage">75%</span></h4>
+              <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+              </div>
+            </div>
+            
+            <div class="skill-progress" data-percentage="70">
+              <h4>Database Management <span class="skill-percentage">70%</span></h4>
+              <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          
           <div class="skills">
             <span class="skill-tag">HTML5</span>
             <span class="skill-tag">CSS3</span>
@@ -73,24 +125,77 @@
             <span class="skill-tag">PostgreSQL</span>
             <span class="skill-tag">Figma</span>
           </div>
+          
+          <div class="resume-download" style="margin-top: 2rem;">
+            <a href="#" class="btn"><i class="fas fa-download"></i> Download Resume</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Projects Section -->
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">My Experience</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023 - Present</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Web Developer</h3>
+            <p class="timeline-subtitle">GRAM Industrial Inc.</p>
+            <p class="timeline-desc">Develop and maintain the company website, implementing modern web technologies and ensuring optimal performance across devices.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2022 - 2023</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Game Developer</h3>
+            <p class="timeline-subtitle">Freelance</p>
+            <p class="timeline-desc">Created educational games using Godot Engine, focusing on programming concepts for beginners and young learners.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2021 - 2022</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">UI/UX Designer</h3>
+            <p class="timeline-subtitle">LYCK Creative</p>
+            <p class="timeline-desc">Designed user interfaces for web applications with a focus on user experience, accessibility, and modern design principles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Section  -->
+   <!-- fix the sorthing of projects to check the tags that matches in the sort menu -->
   <section id="projects" class="projects">
     <div class="container">
-      <h2 class="section-title">My Projects</h2>
+      <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+      
+      <div class="project-filter" data-aos="fade-up" data-aos-delay="100">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="web">Web Development</button>
+        <button data-filter="game">Game Development</button>
+        <button data-filter="ui">UI/UX Design</button>
+      </div>
+      
       <div class="project-grid">
         <!-- Project 1 -->
-        <div class="project-card">
+        <div class="project-card web game" data-aos="fade-up" data-aos-delay="200">
           <div class="project-img-container">
             <img src="pygram.png" alt="Project 1">
             <div class="project-overlay">
+              <h3>PyGram</h3>
               <div class="project-links">
-                <!-- <a href="#"><i class="fas fa-link"></i></a> -->
-                <a href="https://github.com/yowrexd/PyGram"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/yowrexd/PyGram" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
@@ -100,25 +205,24 @@
             <div class="project-tags">
               <span class="project-tag">Godot</span>
               <span class="project-tag">Gdscript</span>
-              <!-- <span class="project-tag">MongoDB</span> -->
             </div>
           </div>
         </div>
         
         <!-- Project 2 -->
-        <div class="project-card">
+        <div class="project-card web ui" data-aos="fade-up" data-aos-delay="300">
           <div class="project-img-container">
             <img src="gram.png" alt="Project 2">
             <div class="project-overlay">
+              <h3>GRAM Industrial Inc.</h3>
               <div class="project-links">
-                <!-- <a href="#"><i class="fas fa-link"></i></a> -->
-                <!-- <a href="#"><i class="fab fa-github"></i></a> -->
+                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
           <div class="project-content">
             <h3>GRAM Industrial Inc.</h3>
-            <p>A dynamic website for GRAM Industrial Inc.</p>
+            <p>A dynamic website for GRAM Industrial Inc. featuring responsive design, content management system, and interactive elements.</p>
             <div class="project-tags">
               <span class="project-tag">HTML5</span>
               <span class="project-tag">CSS3</span>
@@ -130,24 +234,116 @@
         </div>
         
         <!-- Project 3 -->
-        <div class="project-card">
+        <div class="project-card web ui" data-aos="fade-up" data-aos-delay="400">
           <div class="project-img-container">
             <img src="lyck.png" alt="Project 3">
             <div class="project-overlay">
+              <h3>LYCK</h3>
               <div class="project-links">
-                <!-- <a href="#"><i class="fas fa-link"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a> -->
+                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
           <div class="project-content">
             <h3>LYCK</h3>
-            <p>A portfolio for a creative group.</p>
+            <p>A portfolio website for a creative agency with modern design principles, animations, and showcase of their work.</p>
             <div class="project-tags">
               <span class="project-tag">HTML</span>
               <span class="project-tag">CSS</span>
               <span class="project-tag">JavaScript</span>
             </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 (New) -->
+        <div class="project-card game" data-aos="fade-up" data-aos-delay="500">
+          <div class="project-img-container">
+            <img src="/api/placeholder/400/320" alt="Game Project">
+            <div class="project-overlay">
+              <h3>Code Quest</h3>
+              <div class="project-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Code Quest</h3>
+            <p>An adventure game that teaches coding logic through puzzle solving and interactive challenges.</p>
+            <div class="project-tags">
+              <span class="project-tag">Godot</span>
+              <span class="project-tag">Gdscript</span>
+              <span class="project-tag">Game Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">What People Say</h2>
+      
+      <div class="testimonial-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-slide active">
+          <img src="/api/placeholder/100/100" alt="Client" class="testimonial-avatar">
+          <div class="testimonial-content">
+            "Yuri delivered an exceptional website that perfectly captured our company's essence. His technical skills combined with an eye for design resulted in a product that exceeded our expectations."
+          </div>
+          <h4 class="testimonial-author">John Smith</h4>
+          <p class="testimonial-position">CEO, GRAM Industrial Inc.</p>
+        </div>
+        
+        <div class="testimonial-dots">
+          <span class="testimonial-dot active" data-slide="0"></span>
+          <span class="testimonial-dot" data-slide="1"></span>
+          <span class="testimonial-dot" data-slide="2"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Blog Section -->
+  <section id="blog" class="blog">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Latest Articles</h2>
+      
+      <div class="blog-grid">
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="blog-img">
+            <img src="/api/placeholder/400/320" alt="Blog Post">
+          </div>
+          <div class="blog-content">
+            <p class="blog-date">April 5, 2025</p>
+            <h3 class="blog-title">Getting Started with Web Development in 2025</h3>
+            <p class="blog-excerpt">A comprehensive guide for beginners looking to start their journey in web development with modern tools and frameworks.</p>
+            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="blog-img">
+            <img src="/api/placeholder/400/320" alt="Blog Post">
+          </div>
+          <div class="blog-content">
+            <p class="blog-date">March 22, 2025</p>
+            <h3 class="blog-title">The Evolution of Game Development with Godot</h3>
+            <p class="blog-excerpt">Exploring how Godot Engine has revolutionized indie game development and why it's becoming a popular choice.</p>
+            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="blog-img">
+            <img src="/api/placeholder/400/320" alt="Blog Post">
+          </div>
+          <div class="blog-content">
+            <p class="blog-date">February 15, 2025</p>
+            <h3 class="blog-title">UI/UX Design Trends to Watch in 2025</h3>
+            <p class="blog-excerpt">A look at the latest design trends that are shaping the digital landscape and enhancing user experiences.</p>
+            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -157,9 +353,9 @@
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
+      <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
       <div class="contact-container">
-        <div class="contact-info">
+        <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
           <h3>Interested?</h3>
           <p>I'm always open to discussing new projects, creative ideas or opportunities.</p>
           
@@ -185,29 +381,35 @@
           
           <div class="contact-method">
             <div class="contact-icon">
-              <i class="fas fa-phone-alt"></i>
+              <i class="fas fa-phone"></i> <!-- Fixed phone icon -->
             </div>
             <div class="contact-details">
               <h4>Phone</h4>
-              <p>(+63)9150894449</p>
+              <p>+63 977 123 4567</p>
             </div>
           </div>
         </div>
         
-        <form id="contact-form">
+        <form id="contact-form" data-aos="fade-left" data-aos-delay="200">
           <div class="form-group">
             <input type="text" placeholder="Your Name" required>
           </div>
+          
           <div class="form-group">
             <input type="email" placeholder="Your Email" required>
           </div>
+          
           <div class="form-group">
             <input type="text" placeholder="Subject">
           </div>
+          
           <div class="form-group">
             <textarea placeholder="Your Message" required></textarea>
           </div>
-          <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+          
+          <button type="submit" class="btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
         </form>
       </div>
     </div>
@@ -216,20 +418,25 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div class="social-links">
-        <a href="https://github.com/yowrexd"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/yowrexd/"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/yowrexd/"><i class="fab fa-instagram"></i></a>
-      </div>
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
-      <p class="copyright">© <span id="year">2025</span> Yuri Santos. All Rights Reserved.</p>
+      <div class="copyright">
+        © <span id="year"></span> Yuri Santos. All rights reserved.
+      </div>
     </div>
   </footer>
-  <script src="script.js"></script>
-  </body>
+
+  <!-- Scroll to top button -->
+  <div class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
