@@ -417,7 +417,7 @@ nav.scrolled {
 }
 
 /* Skills progress bars */
-.skills-container {
+/* .skills-container {
   margin-top: 2rem;
 }
 
@@ -449,7 +449,7 @@ nav.scrolled {
   border-radius: 10px;
   width: 0;
   transition: width 1.5s ease-in-out;
-}
+} */
 
 /* Projects Section */
 .projects {
@@ -1045,7 +1045,7 @@ footer {
 }
 
 /* Testimonials */
-.testimonials {
+/* .testimonials {
   background-color: var(--light);
   padding: 5rem 2rem;
 }
@@ -1154,10 +1154,10 @@ footer {
 .testimonial-dot.active {
   background: var(--primary);
   transform: scale(1.2);
-}
+} */
 
 /* Experience Timeline */
-.timeline {
+/* .timeline {
   position: relative;
   max-width: 800px;
   margin: 3rem auto;
@@ -1271,10 +1271,10 @@ footer {
     left: 0;
     top: -30px;
   }
-}
+} */
 
 /* Blog section */
-.blog {
+/* .blog {
   background-color: var(--light);
 }
 
@@ -1357,7 +1357,7 @@ footer {
 .blog-link:hover {
   color: var(--accent);
   gap: 0.75rem;
-}
+} */
 
 /* AOS Animation Overrides */
 [data-aos] {
