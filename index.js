@@ -197,16 +197,16 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // Skills progress animation
-const skillBars = document.querySelectorAll('.skill-progress');
+// const skillBars = document.querySelectorAll('.skill-progress');
 
-function animateSkills() {
-  skillBars.forEach(bar => {
-    const percentage = bar.getAttribute('data-percentage');
-    const progressBar = bar.querySelector('.progress-bar');
+// function animateSkills() {
+//   skillBars.forEach(bar => {
+//     const percentage = bar.getAttribute('data-percentage');
+//     const progressBar = bar.querySelector('.progress-bar');
     
-    progressBar.style.width = percentage + '%';
-  });
-}
+//     progressBar.style.width = percentage + '%';
+//   });
+// }
 
 // Trigger skill animation when in viewport
 const skillsSection = document.querySelector('.skills-container');
@@ -248,24 +248,24 @@ scrollTopButton.addEventListener('click', () => {
 });
 
 // Add testimonial slider functionality
-const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-const testimonialDots = document.querySelectorAll('.testimonial-dot');
-let currentSlide = 0;
+// const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+// const testimonialDots = document.querySelectorAll('.testimonial-dot');
+// let currentSlide = 0;
 
-function showSlide(index) {
-  testimonialSlides.forEach(slide => slide.classList.remove('active'));
-  testimonialDots.forEach(dot => dot.classList.remove('active'));
+// function showSlide(index) {
+//   testimonialSlides.forEach(slide => slide.classList.remove('active'));
+//   testimonialDots.forEach(dot => dot.classList.remove('active'));
   
-  testimonialSlides[index].classList.add('active');
-  testimonialDots[index].classList.add('active');
-}
+//   testimonialSlides[index].classList.add('active');
+//   testimonialDots[index].classList.add('active');
+// }
 
-testimonialDots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    currentSlide = index;
-    showSlide(currentSlide);
-  });
-});
+// testimonialDots.forEach((dot, index) => {
+//   dot.addEventListener('click', () => {
+//     currentSlide = index;
+//     showSlide(currentSlide);
+//   });
+// });
 
 // Auto advance testimonials
 setInterval(() => {
