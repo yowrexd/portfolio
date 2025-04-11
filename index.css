@@ -215,6 +215,23 @@ nav.scrolled {
   opacity: 0.9;
 }
 
+.role-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cursor {
+  display: inline-block;
+  position: relative;
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 .highlight {
   color: white;
   position: relative;
@@ -233,16 +250,7 @@ nav.scrolled {
 }
 
 .typewriter {
-  border-right: 3px solid var(--accent);
-  white-space: nowrap;
-  overflow: hidden;
-  padding-right: 5px;
-  animation: blinkCursor 0.8s step-end infinite;
-}
-
-@keyframes blinkCursor {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--accent); }
+  border-right: none;
 }
 
 .social-links {
@@ -1139,7 +1147,6 @@ footer {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 2rem;
 }
 
 .testimonial-dot {

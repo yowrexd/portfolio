@@ -45,44 +45,41 @@ window.addEventListener('scroll', () => {
 
 // Typewriter effect
 const roleText = document.getElementById('role-text');
-const roles = ['Web Developer', 'UI/UX Designer', 'Game Developer', 'Problem Solver'];
+const roles = ['Programmer', 'Designer', 'Game Developer', 'Problem Solver'];
 let currentRoleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let typingSpeed = 100;
+let typingDelay = 100;
 
 function typeEffect() {
   const currentRole = roles[currentRoleIndex];
   
   if (isDeleting) {
-    // Deleting text
     roleText.textContent = currentRole.substring(0, charIndex - 1);
     charIndex--;
-    typingSpeed = 50; // Faster when deleting
+    typingDelay = 50; // Faster when deleting
   } else {
-    // Typing text
     roleText.textContent = currentRole.substring(0, charIndex + 1);
     charIndex++;
-    typingSpeed = 100; // Normal speed when typing
+    typingDelay = 150; // Slower when typing
   }
   
-  // If completed typing
   if (!isDeleting && charIndex === currentRole.length) {
     isDeleting = true;
-    typingSpeed = 1000; // Pause before deleting
-  } 
-  // If completed deleting
-  else if (isDeleting && charIndex === 0) {
+    typingDelay = 2000; // Pause at end
+  } else if (isDeleting && charIndex === 0) {
     isDeleting = false;
     currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-    typingSpeed = 500; // Pause before typing new word
+    typingDelay = 500; // Pause before next word
   }
   
-  setTimeout(typeEffect, typingSpeed);
+  setTimeout(typeEffect, typingDelay);
 }
 
-// Start the typewriter effect
-window.addEventListener('load', typeEffect);
+// Start typing effect after page load
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(typeEffect, 1000);
+});
 
 // Contact form submission
 const contactForm = document.getElementById('contact-form');
