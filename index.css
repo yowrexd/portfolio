@@ -1366,6 +1366,117 @@ footer {
   gap: 0.75rem;
 } */
 
+/* new css */
+/* Mobile Responsiveness Fixes */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for initial mobile sizing */
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 100vh; /* Use viewport height instead of fixed height */
+    padding: 0 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem; /* Smaller font size for mobile */
+  }
+  
+  .hero .role {
+    font-size: 1.2rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  /* Improve spacing on mobile */
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  /* Fix navigation menu for mobile */
+  nav {
+    padding: 0.8rem 1rem;
+  }
+  
+  .nav-links.active {
+    align-items: center;
+    padding-top: 4rem;
+  }
+  
+  /* Projects section fixes */
+  .project-card {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  /* About section image fix */
+  .profile-img-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  /* Contact form full width on mobile */
+  form {
+    padding: 1.5rem;
+  }
+}
+
+/* Fix initial load flicker */
+.preloader {
+  background: var(--dark);
+}
+
+/* Additional fixes for even smaller screens */
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .contact-method {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .contact-icon {
+    margin-right: 0;
+  }
+}
+
 /* AOS Animation Overrides */
 [data-aos] {
   pointer-events: auto !important;
