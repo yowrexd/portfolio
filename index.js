@@ -206,13 +206,13 @@ window.addEventListener('DOMContentLoaded', () => {
 // }
 
 // Trigger skill animation when in viewport
-const skillsSection = document.querySelector('.skills-container');
+// const skillsSection = document.querySelector('.skills-container');
 
-window.addEventListener('scroll', () => {
-  if (isInViewport(skillsSection)) {
-    animateSkills();
-  }
-});
+// window.addEventListener('scroll', () => {
+//   if (isInViewport(skillsSection)) {
+//     animateSkills();
+//   }
+// });
 
 // Helper function to check if element is in viewport
 function isInViewport(element) {
@@ -265,9 +265,9 @@ scrollTopButton.addEventListener('click', () => {
 // });
 
 // Auto advance testimonials
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % testimonialSlides.length;
-  showSlide(currentSlide);
-}, 5000);
+// setInterval(() => {
+//   currentSlide = (currentSlide + 1) % testimonialSlides.length;
+//   showSlide(currentSlide);
+// }, 5000);
 
 // new
