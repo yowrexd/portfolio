@@ -238,7 +238,7 @@ nav.scrolled {
   display: inline-block;
 }
 
-.highlight::after {
+/* .highlight::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -247,7 +247,7 @@ nav.scrolled {
   bottom: 5px;
   left: 0;
   z-index: -1;
-}
+} */
 
 .typewriter {
   border-right: none;
