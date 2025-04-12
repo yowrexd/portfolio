@@ -33,9 +33,3 @@ I'm **Yuri Santos**, a passionate and dedicated **Bachelor of Science in Informa
 1. Clone or download this repository.  
 2. Open `index.html` in your browser.  
 3. Explore and interact!
-
-```bash
-git clone https://github.com/yourusername/your-portfolio.git
-cd your-portfolio
-open index.html
-
