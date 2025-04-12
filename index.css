@@ -419,6 +419,12 @@ nav.scrolled {
   top: 15px;
   left: 15px;
   z-index: 0;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.profile-img-container:hover::before {
+  opacity: 1;
 }
 
 .bio {
