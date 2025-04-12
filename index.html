@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yuri Santos - Web Developer and Game Developer Portfolio">
   <title>Yuri Santos | Portfolio</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
+  <link rel="preload" href="index.css" as="style">
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="index.css">
-  
 </head>
 <body>
   <!-- Preloader -->
@@ -187,15 +193,14 @@
       <h2 class="section-title" data-aos="fade-up">My Projects</h2>
       
       <div class="project-filter" data-aos="fade-up" data-aos-delay="100">
-        <button class="active" data-filter="all">All</button>
-        <button data-filter="web">Web Development</button>
-        <button data-filter="game">Game Development</button>
-        <button data-filter="ui">UI/UX Design</button>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="game">Game Development</button>
       </div>
       
       <div class="project-grid">
         <!-- Project 1 -->
-        <div class="project-card web game" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-card" data-categories="game" data-aos="fade-up" data-aos-delay="200">
           <div class="project-img-container">
             <img src="pygram.png" alt="Project 1">
             <div class="project-overlay">
@@ -217,7 +222,7 @@
         </div>
         
         <!-- Project 2 -->
-        <div class="project-card web ui" data-aos="fade-up" data-aos-delay="300">
+        <div class="project-card" data-categories="web,ui" data-aos="fade-up" data-aos-delay="300">
           <div class="project-img-container">
             <img src="gram.png" alt="Project 2">
             <div class="project-overlay">
@@ -241,7 +246,7 @@
         </div>
         
         <!-- Project 3 -->
-        <div class="project-card web ui" data-aos="fade-up" data-aos-delay="400">
+        <div class="project-card" data-categories="web,ui" data-aos="fade-up" data-aos-delay="400">
           <div class="project-img-container">
             <img src="lyck.png" alt="Project 3">
             <div class="project-overlay">
@@ -261,33 +266,8 @@
             </div>
           </div>
         </div>
-        
-        <!-- Project 4 (New) -->
-        <!-- <div class="project-card game" data-aos="fade-up" data-aos-delay="500">
-          <div class="project-img-container">
-            <img src="/api/placeholder/400/320" alt="Game Project">
-            <div class="project-overlay">
-              <h3>Code Quest</h3>
-              <div class="project-links">
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>Code Quest</h3>
-            <p>An adventure game that teaches coding logic through puzzle solving and interactive challenges.</p>
-            <div class="project-tags">
-              <span class="project-tag">Godot</span>
-              <span class="project-tag">Gdscript</span>
-              <span class="project-tag">Game Design</span>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>-->
-    <!-- do not comment this section tag below because it is the end of the section for projects 
-    and it will break the page-->
+    </div>
   </section> 
   
   <!-- Testimonials Section -->
@@ -401,19 +381,19 @@
         
         <form id="contact-form" data-aos="fade-left" data-aos-delay="200">
           <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="name" placeholder="Your Name" required minlength="2">
           </div>
           
           <div class="form-group">
-            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="email" name="email" placeholder="Your Email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
           </div>
           
           <div class="form-group">
-            <input type="text" name="subject" placeholder="Subject">
+            <input type="text" name="subject" placeholder="Subject" minlength="3">
           </div>
           
           <div class="form-group">
-            <textarea name="message" placeholder="Your Message" required></textarea>
+            <textarea name="message" placeholder="Your Message" required minlength="10"></textarea>
           </div>
           
           <button type="submit" class="btn">
@@ -445,8 +425,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+  <script src="index.js" type="module"></script>
 </body>
 </html>

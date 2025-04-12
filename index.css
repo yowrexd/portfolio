@@ -17,6 +17,8 @@
   --border-radius-lg: 16px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.2);
+  --shadow-button: 0 4px 15px rgba(39, 152, 183, 0.3);
 }
 
 .dark-mode {
@@ -36,14 +38,17 @@
   box-sizing: border-box;
 }
 
+body, button, input, textarea {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  transition: var(--transition);
+}
+
 body {
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--light);
   color: var(--text-dark);
   scroll-behavior: smooth;
   line-height: 1.7;
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4 {
@@ -74,7 +79,6 @@ nav {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
 }
 
 nav.scrolled {
@@ -113,7 +117,6 @@ nav.scrolled {
   position: relative;
   padding: 0.5rem 0;
   font-weight: 500;
-  transition: var(--transition);
 }
 
 .nav-links a::after {
@@ -124,7 +127,6 @@ nav.scrolled {
   background: var(--accent);
   bottom: 0;
   left: 0;
-  transition: var(--transition);
 }
 
 .nav-links a:hover::after {
@@ -148,7 +150,6 @@ nav.scrolled {
   width: 28px;
   background-color: white;
   margin: 4px 0;
-  transition: var(--transition);
   border-radius: 2px;
 }
 
@@ -164,7 +165,6 @@ nav.scrolled {
   border-radius: 50%;
   margin-left: 1rem;
   cursor: pointer;
-  transition: var(--transition);
 }
 
 .theme-toggle:hover {
@@ -300,7 +300,6 @@ nav.scrolled {
 .social-links a {
   color: white;
   font-size: 1.5rem;
-  transition: var(--transition);
 }
 
 .social-links a:hover {
@@ -316,12 +315,11 @@ nav.scrolled {
   border-radius: 50px;
   text-decoration: none;
   cursor: pointer;
-  transition: var(--transition);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  box-shadow: 0 4px 15px rgba(39, 152, 183, 0.3);
+  box-shadow: var(--shadow-button);
 }
 
 .btn:hover {
@@ -400,7 +398,6 @@ nav.scrolled {
 .profile-img {
   width: 100%;
   border-radius: 20px;
-  transition: var(--transition);
   position: relative;
   z-index: 1;
 }
@@ -420,7 +417,6 @@ nav.scrolled {
   left: 15px;
   z-index: 0;
   opacity: 0;
-  transition: var(--transition);
 }
 
 .profile-img-container:hover::before {
@@ -457,7 +453,6 @@ nav.scrolled {
   border-radius: var(--border-radius);
   font-size: 0.9rem;
   font-weight: 500;
-  transition: var(--transition);
 }
 
 .skill-tag:hover {
@@ -492,7 +487,6 @@ nav.scrolled {
   cursor: pointer;
   font-weight: 500;
   color: var(--primary);
-  transition: var(--transition);
 }
 
 .project-filter button:hover,
@@ -513,7 +507,6 @@ nav.scrolled {
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: var(--transition);
 }
 
 .dark-mode .project-card {
@@ -522,7 +515,7 @@ nav.scrolled {
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-hover);
 }
 
 .project-img-container {
@@ -535,7 +528,6 @@ nav.scrolled {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition);
 }
 
 .project-card:hover img {
@@ -553,7 +545,6 @@ nav.scrolled {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: var(--transition);
 }
 
 .project-card:hover .project-overlay {
@@ -575,7 +566,6 @@ nav.scrolled {
   justify-content: center;
   color: var(--dark);
   font-size: 1.2rem;
-  transition: var(--transition);
 }
 
 .project-links a:hover {
@@ -656,7 +646,6 @@ nav.scrolled {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
-  transition: var(--transition);
 }
 
 .contact-method:hover {
@@ -674,7 +663,6 @@ nav.scrolled {
   margin-right: 1rem;
   font-size: 1.3rem;
   color: var(--accent);
-  transition: var(--transition);
 }
 
 .contact-method:hover .contact-icon {
@@ -722,7 +710,6 @@ input, textarea {
   font-size: 1rem;
   background: rgba(255, 255, 255, 0.05);
   color: white;
-  transition: var(--transition);
 }
 
 input::placeholder, textarea::placeholder {
@@ -750,15 +737,14 @@ textarea {
   color: white;
   z-index: 1100;
   max-width: 300px;
-  transform: translateX(400px);
+  transform: translateX(100%);
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .alert.show {
   transform: translateX(0);
-  opacity: 1;
 }
 
 .alert.success {
@@ -801,7 +787,6 @@ footer {
 .footer-links a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  transition: var(--transition);
 }
 
 .footer-links a:hover {
@@ -969,15 +954,15 @@ footer {
   font-size: 1.2rem;
   cursor: pointer;
   z-index: 99;
-  opacity: 0;
-  visibility: hidden;
+  transform: translateY(100px);
+  pointer-events: none;
   transition: var(--transition);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-top.active {
-  opacity: 1;
-  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .scroll-top:hover {
