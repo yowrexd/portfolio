@@ -1417,7 +1417,7 @@ footer {
 }
 
 /* Add animation for section titles */
-.section-title {
+/* .section-title {
   position: relative;
   animation: none;
 }
@@ -1433,7 +1433,7 @@ footer {
   background: var(--accent);
   transition: none;
 }
-
+s
 .section-title:hover::after {
   transform: none;
-}
+} */
