@@ -343,3 +343,71 @@ elements.scrollTopButton?.addEventListener('click', () => {
     console.error('Scroll to top error:', error);
   }
 });
+
+
+// downlaoding resume
+// Track resume downloads
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all resume download buttons
+  const resumeButtons = document.querySelectorAll('a[download]');
+  
+  resumeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      console.log('Resume downloaded');
+      
+      // Optional: Add visual feedback when downloaded
+      const originalText = this.innerHTML;
+      this.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
+      
+      // Reset after 2 seconds
+      setTimeout(() => {
+        this.innerHTML = originalText;
+      }, 2000);
+      
+      // Optional: You could implement analytics tracking here
+      // if you're using something like Google Analytics
+    });
+  });
+});
+
+// Cross-browser resume download function
+function setupResumeDownload() {
+  const resumeButtons = document.querySelectorAll('.hero-buttons a[download], .resume-download a[download]');
+  
+  resumeButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      const filePath = this.getAttribute('href');
+      const fileName = filePath.split('/').pop();
+      
+      // Check if download attribute is supported
+      const isDownloadSupported = 'download' in document.createElement('a');
+      
+      if (!isDownloadSupported) {
+        e.preventDefault();
+        
+        // Create an iframe to force download (works in IE)
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = filePath;
+        document.body.appendChild(iframe);
+        
+        setTimeout(() => {
+          document.body.removeChild(iframe);
+        }, 1000);
+        
+        // Show feedback to user
+        const originalText = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
+        
+        setTimeout(() => {
+          this.innerHTML = originalText;
+        }, 2000);
+      }
+      
+      console.log('Resume download initiated');
+    });
+  });
+}
+
+// Call this function when the DOM is loaded
+document.addEventListener('DOMContentLoaded', setupResumeDownload);

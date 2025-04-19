@@ -132,7 +132,7 @@ nav.scrolled {
   position: absolute;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--light);
   bottom: 0;
   left: 0;
   transition: width 0.3s ease;
@@ -899,7 +899,7 @@ footer {
     position: absolute;
     width: 0;
     height: 2px;
-    background: var(--accent);
+    background: var(--light);
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -917,7 +917,7 @@ footer {
   }
   
   .nav-links a:hover {
-    color: var(--accent);
+    color: var(--light);
   }
   
   .menu-toggle {
@@ -1421,7 +1421,7 @@ footer {
 /* Add animation for section titles */
 /* .section-title {
   position: relative;
-  animation: none;
+  /* animation: none;
 }
 
 .section-title::after {

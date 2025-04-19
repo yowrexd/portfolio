@@ -55,7 +55,7 @@
         <a href="#projects" class="btn">
           <i class="fas fa-eye"></i> View My Projects
         </a>
-        <a href="#" class="btn">
+        <a href="assets/santos-yuri-resume.pdf" class="btn">
           <i class="fas fa-download"></i> Download Resume
         </a>
       </div>
@@ -67,7 +67,7 @@
       </div>
     </div>
     <a href="#about" class="scroll-down" id="scroll-down">
-      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-chevron-down" style=" color: white"></i>
     </a>
   </section>
   
@@ -378,7 +378,7 @@
             </div>
           </div>
         </div>
-        
+        <!-- form -->
         <form id="contact-form" action="https://formsubmit.co/yuritsantos00@gmail.com" method="POST" data-aos="fade-left" data-aos-delay="200">
           <div class="form-group">
             <input type="text" name="name" placeholder="Your Name" required minlength="2">
@@ -396,10 +396,13 @@
             <textarea name="message" placeholder="Your Message" required minlength="4"></textarea>
           </div>
           
-          <!-- Add a hidden input for FormSubmit to know where to send the data -->
-          <input type="hidden" name="_next" value="https://yourdomain.com/thank-you">
-          <input type="hidden" name="_subject" value="New Message from Portfolio">
-          <input type="hidden" name="_captcha" value="false">
+          <!-- FormSubmit configuration -->
+          <input type="hidden" name="_next" value="thankyou.html">
+          <input type="hidden" name="_subject" value="New Portfolio Contact: {subject}">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_template" value="table">
+          
           <button type="submit" class="btn">
             <i class="fas fa-paper-plane"></i> Send Message
           </button>
@@ -451,6 +454,7 @@ project links
 
 CONTACT SECTION
 contact form
+section title underline change to white
 
 GENERAL
 color palette
