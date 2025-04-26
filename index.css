@@ -81,8 +81,9 @@ nav {
   will-change: transform;
 }
 
+/* Prevent navbar from shrinking on scroll */
 nav.scrolled {
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem; /* Match the default nav padding */
   background: rgba(13, 27, 42, 0.98);
 }
 
