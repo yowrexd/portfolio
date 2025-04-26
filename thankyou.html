@@ -6,50 +6,111 @@
     <title>Thank You</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
             margin: 0;
             padding: 0;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f5f5f5 100%);
+            animation: fadeInBody 1s;
+        }
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .container {
             text-align: center;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-width: 600px;
+            padding: 2.5rem 2rem;
+            background: rgba(255,255,255,0.95);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            max-width: 400px;
+            width: 100%;
+            animation: fadeInUp 1s;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .thankyou-graphic {
+            margin-bottom: 1.5rem;
+            animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.7);}
+            70% { opacity: 1; transform: scale(1.1);}
+            100% { opacity: 1; transform: scale(1);}
         }
         h1 {
-            color: #333;
-            margin-bottom: 1rem;
+            color: #22223b;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
         p {
-            color: #666;
+            color: #4a4e69;
             line-height: 1.6;
+            font-size: 1.05rem;
+            margin-bottom: 0;
         }
         .home-link {
             display: inline-block;
             margin-top: 2rem;
-            padding: 10px 20px;
-            background-color: #007bff;
+            padding: 0.7rem 2rem;
+            background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+            transition: background 0.3s, transform 0.2s;
         }
         .home-link:hover {
-            background-color: #0056b3;
+            background: linear-gradient(90deg, #60a5fa 0%, #6366f1 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        /* --- Responsive styles --- */
+        @media (max-width: 500px) {
+            .container {
+                padding: 1.2rem 0.5rem;
+                border-radius: 10px;
+                max-width: 98vw;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            p {
+                font-size: 0.98rem;
+            }
+            .thankyou-graphic svg {
+                width: 48px;
+                height: 48px;
+            }
+            .home-link {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.98rem;
+            }
         }
     </style>
+    <!-- Google Fonts for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
+        <div class="thankyou-graphic">
+            <!-- Subtle SVG checkmark in a circle -->
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="32" fill="#e0e7ff"/>
+                <path d="M20 34l8 8 16-16" stroke="#6366f1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
         <h1>Thank You!</h1>
-        <p>Your message has been received. I appreciate you taking the time to reach out and will get back to you as soon as possible.</p>
+        <p>Your message has been received.<br>
+        I appreciate you reaching out and will get back to you soon.</p>
         <a href="index.html" class="home-link">Return to Homepage</a>
     </div>
 </body>
