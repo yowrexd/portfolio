@@ -436,30 +436,160 @@ nav.scrolled {
 }
 
 .skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.skill-category {
+  position: relative;
+  background: rgba(255,255,255,0.75);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2.2rem 1.7rem 1.7rem 1.7rem;
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  border: 1.5px solid rgba(76, 201, 240, 0.08);
+  transition: box-shadow 0.22s, transform 0.22s, border 0.22s;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.dark-mode .skill-category {
+  background: rgba(60, 80, 110, 0.7);
+  border: 1.5px solid rgba(76, 201, 240, 0.13);
+}
+
+.skill-category::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 8px 8px 0 0;
+  opacity: 0.85;
+  z-index: 2;
+}
+
+.skill-category:hover {
+  box-shadow: 0 12px 36px 0 rgba(39, 152, 183, 0.18);
+  transform: translateY(-6px) scale(1.025);
+  border: 1.5px solid var(--accent);
+}
+
+.skill-category h3 {
+  font-size: 1.18rem;
+  color: var(--primary);
+  margin-bottom: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skill-category .skill-tag {
+  background: rgba(39, 152, 183, 0.11);
+  color: var(--primary);
+  padding: 0.48rem 1.1rem 0.48rem 0.9rem;
+  border-radius: 22px;
+  font-size: 0.97rem;
+  font-weight: 500;
+  margin: 0 0.4rem 0.5rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  border: none;
+  box-shadow: 0 2px 8px rgba(39,152,183,0.04);
+  transition: background 0.18s, color 0.18s, transform 0.18s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.skill-category .skill-tag:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px) scale(1.06);
+}
+
+.skill-category .skill-tag i {
+  font-size: 1.1em;
+  opacity: 0.85;
+}
+
+/* Skills Bubble Grid */
+.skills-bubble-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
   margin-top: 2rem;
 }
 
-.skill-tag {
-  background-color: rgba(39, 152, 183, 0.1);
+.skill-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  background: rgba(76, 201, 240, 0.13);
   color: var(--primary);
-  padding: 0.625rem 1.25rem;
-  border-radius: var(--border-radius);
-  font-size: 0.9rem;
+  font-size: 1.08rem;
   font-weight: 500;
-  animation: slideUp 0.5s ease-out;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+  padding: 0.85em 1.5em;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(39,152,183,0.06);
+  border: none;
+  transition: background 0.18s, color 0.18s, transform 0.18s;
+  cursor: default;
+  user-select: none;
+  min-width: 110px;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.skill-tag:hover {
-  background-color: var(--primary);
-  color: white;
-  transform: translateY(-3px);
+.skill-bubble i {
+  font-size: 1.25em;
+  opacity: 0.85;
+}
+
+.skill-bubble:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-3px) scale(1.04);
+}
+
+@media (max-width: 700px) {
+  .skills-bubble-grid {
+    gap: 0.7rem;
+  }
+  .skill-bubble {
+    font-size: 0.98rem;
+    padding: 0.7em 1.1em;
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-bubble-grid {
+    gap: 0.5rem;
+  }
+  .skill-bubble {
+    font-size: 0.92rem;
+    padding: 0.6em 0.7em;
+    min-width: 70px;
+  }
 }
 
 /* Projects Section */
@@ -1436,3 +1566,110 @@ s
 .section-title:hover::after {
   transform: none;
 } */
+
+/* Improved About & Skills Section */
+.about-skills-section {
+  background: var(--light);
+  padding: 5rem 2rem;
+}
+
+.about-skills-container {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-side {
+  flex: 2;
+  min-width: 320px;
+}
+
+.skills-side {
+  flex: 1.2;
+  min-width: 260px;
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2rem;
+  margin-top: 2.5rem;
+  align-self: flex-start;
+}
+
+.dark-mode .skills-side {
+  background: var(--secondary);
+}
+
+.about-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 1.5rem 0 2.5rem 0;
+  border-radius: 2px;
+}
+
+.about-subtitle {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.skills-title {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-start;
+}
+
+.skill-tag {
+  background: rgba(39, 152, 183, 0.09);
+  color: var(--primary);
+  padding: 0.7rem 1.3rem 0.7rem 1rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 2px 8px rgba(39,152,183,0.04);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border: none;
+}
+
+.skill-tag i {
+  font-size: 1.1em;
+  opacity: 0.85;
+}
+
+.skill-tag:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 992px) {
+  .about-skills-container {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .skills-side {
+    margin-top: 0;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
