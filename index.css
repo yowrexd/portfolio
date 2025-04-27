@@ -22,13 +22,17 @@
 }
 .dark-mode {
   --primary: #4cc9f0;
-  --secondary: #3d5a80;
+  --primary-dark: #00b4d8;
+  --secondary: #1a2634;
   --accent: #00b4d8;
   --dark: #0d1b2a;
-  --light: #121212;
-  --text-dark: #f8f9fa;
+  --light: #1a2634;
+  --text-dark: #e9ecef;
   --text-light: #f8f9fa;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --card-bg: #1e2a3a;
+  --input-bg: rgba(255, 255, 255, 0.08);
+  --border-color: rgba(255, 255, 255, 0.15);
 }
 
 * {
@@ -134,7 +138,7 @@ nav.scrolled {
   position: absolute;
   width: 0;
   height: 2px;
-  background: var(--light);
+  background: var(--text-light);
   bottom: 0;
   left: 0;
   transition: width 0.3s ease;
@@ -433,7 +437,7 @@ nav.scrolled {
 .bio p {
   margin-bottom: 1.5rem;
   color: var(--text-dark);
-  opacity: 0.8;
+  opacity: 0.9;
   animation-delay: 0.2s;
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -548,15 +552,15 @@ nav.scrolled {
   display: flex;
   align-items: center;
   gap: 0.5em;
-  background: #f5f7fa;
-  color: var(--primary);
+  background: var(--light);
+  color: var(--text-dark);
   font-size: 1.08rem;
   font-weight: 500;
   padding: 0.7em 1.4em;
   border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(39,152,183,0.10);
-  border: 1px solid #e6eef3;
-  transition: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
   cursor: pointer;
   user-select: none;
   min-width: 90px;
@@ -567,17 +571,23 @@ nav.scrolled {
   z-index: 1;
 }
 
-.skill-bubble i {
-  font-size: 1.18em;
-  opacity: 0.92;
-  filter: none;
+.dark-mode .skill-bubble {
+  background: var(--card-bg);
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .skill-bubble:hover {
-  background: #f5f7fa;
-  color: var(--primary);
-  transform: none;
-  box-shadow: 0 2px 14px rgba(39,152,183,0.15);
+  background: var(--primary);
+  color: var(--text-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(76, 201, 240, 0.3);
+}
+
+.skill-bubble i {
+  font-size: 1.18em;
+  opacity: 0.95;
 }
 
 @media (max-width: 700px) {
@@ -644,24 +654,27 @@ nav.scrolled {
 }
 
 .project-card {
-  background-color: white;
+  background-color: var(--light);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
   animation: fadeInScale 0.5s ease-out;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+  border: 1px solid var(--border-color);
 }
 
 .dark-mode .project-card {
-  background-color: var(--secondary);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
 }
 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
+  border-color: var(--primary);
 }
 
 .project-img-container {
@@ -730,13 +743,15 @@ nav.scrolled {
   margin-bottom: 0.75rem;
   font-size: 1.3rem;
   color: var(--text-dark);
+  font-weight: 600;
 }
 
 .project-content p {
   font-size: 0.95rem;
   color: var(--text-dark);
-  opacity: 0.8;
+  opacity: 0.9;
   margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .project-tags {
@@ -750,14 +765,25 @@ nav.scrolled {
   font-size: 0.8rem;
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
-  background: rgba(67, 97, 238, 0.1);
-  color: var (--primary);
+  background: rgba(76, 201, 240, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(76, 201, 240, 0.2);
+}
+
+.dark-mode .project-tag {
+  background: rgba(76, 201, 240, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(76, 201, 240, 0.3);
 }
 
 /* Contact Section */
 .contact {
   background: linear-gradient(135deg, var(--dark), var(--secondary));
   color: white;
+}
+
+.dark-mode .contact {
+  background: linear-gradient(135deg, var(--dark), var(--card-bg));
 }
 
 .contact .section-title {
@@ -841,11 +867,17 @@ form {
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--input-bg);
   padding: 2.5rem;
   border-radius: var(--border-radius-lg);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.dark-mode form {
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -855,12 +887,19 @@ form {
 input, textarea {
   width: 100%;
   padding: 1rem 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius-sm);
   font-size: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
-  transition: none;
+  background: var(--input-bg);
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-light);
 }
 
 input::placeholder, textarea::placeholder {
@@ -870,7 +909,8 @@ input::placeholder, textarea::placeholder {
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: none;
+  box-shadow: 0 0 0 2px rgba(76, 201, 240, 0.2);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 textarea {
@@ -1036,7 +1076,7 @@ footer {
     position: absolute;
     width: 0;
     height: 2px;
-    background: var(--light);
+    background: var(--text-light);
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -1054,7 +1094,7 @@ footer {
   }
   
   .nav-links a:hover {
-    color: var(--light);
+    color: var(--text-light);
   }
   
   .menu-toggle {
