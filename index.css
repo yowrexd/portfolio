@@ -50,6 +50,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-padding-top: 80px; /* Offset for fixed navbar height */
+}
+
 h1, h2, h3, h4 {
   font-weight: 700;
   line-height: 1.2;
