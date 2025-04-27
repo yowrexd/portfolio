@@ -221,30 +221,31 @@ const typeEffect = () => {
 };
 
 // Contact form with improved validation
+// (Netlify Forms fix: only validate, don't prevent default submission)
 elements.contactForm?.addEventListener('submit', e => {
   try {
-    e.preventDefault();
-    const formData = {
-      name: e.target.querySelector('input[type="text"]').value.trim(),
-      email: e.target.querySelector('input[type="email"]').value.trim(),
-      message: e.target.querySelector('textarea').value.trim()
-    };
+    // Simple validation (let browser handle most)
+    const name = e.target.querySelector('input[name="name"]').value.trim();
+    const email = e.target.querySelector('input[name="email"]').value.trim();
+    const message = e.target.querySelector('textarea[name="message"]').value.trim();
 
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!name || !email || !message) {
+      e.preventDefault();
       showAlert('Please fill all required fields', 'error');
-      return;
+      return false;
     }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      e.preventDefault();
       showAlert('Please enter a valid email address', 'error');
-      return;
+      return false;
     }
-
-    showAlert('Your message has been sent successfully!', 'success');
-    e.target.reset();
+    // Allow Netlify to submit the form if validation passes
+    // Optionally show a loading state here
   } catch (error) {
-    console.error('Form submission error:', error);
+    e.preventDefault();
+    console.error('Form validation error:', error);
     showAlert('An error occurred. Please try again.', 'error');
+    return false;
   }
 });
 

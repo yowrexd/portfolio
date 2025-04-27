@@ -350,7 +350,8 @@
           </div>
         </div>
         <!-- form -->
-        <form id="contact-form" action="https://formsubmit.co/yuritsantos00@gmail.com" method="POST" data-aos="fade-left" data-aos-delay="200">
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" data-aos="fade-left" data-aos-delay="200" action="thankyou.html">
+          <input type="hidden" name="form-name" value="contact">
           <div class="form-group">
             <input type="text" name="name" placeholder="Your Name" required minlength="2">
           </div>
@@ -366,13 +367,6 @@
           <div class="form-group">
             <textarea name="message" placeholder="Your Message" required minlength="4"></textarea>
           </div>
-          
-          <!-- FormSubmit configuration -->
-          <input type="hidden" name="_next" value="thankyou.html">
-          <input type="hidden" name="_subject" value="New Portfolio Contact: {subject}">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="text" name="_honey" style="display:none">
-          <input type="hidden" name="_template" value="table">
           
           <button type="submit" class="btn">
             <i class="fas fa-paper-plane"></i> Send Message
@@ -393,7 +387,7 @@
         <a href="#contact">Contact</a>
       </div>
       <div class="copyright">
-        © <span id="year"></span> Yuri Santos. All rights reserved.
+        &copy; <span id="year"></span> Yuri Santos. All rights reserved.
       </div>
     </div>
   </footer>
