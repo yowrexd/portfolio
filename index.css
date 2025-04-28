@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
   --primary: #2798b7;
-  --primary-dark: #1e7a94;
+  --primary-dark: #217a93;
   --secondary: #1c272c;
   --accent: #4cc9f0;
   --dark: #0d1b2a;
@@ -21,8 +21,8 @@
   --shadow-button: 0 4px 15px rgba(39, 152, 183, 0.3);
 }
 .dark-mode {
-  --primary: #4cc9f0;
-  --primary-dark: #00b4d8;
+  --primary: #2798b7;
+  --primary-dark: #217a93;
   --secondary: #1a2634;
   --accent: #00b4d8;
   --dark: #0d1b2a;
@@ -235,6 +235,17 @@ nav.scrolled {
 
 .btn i {
   font-size: 0.9rem;
+}
+
+.dark-mode .btn {
+  background: #2798b7;
+  color: #fff;
+  border: none;
+}
+
+.dark-mode .btn:hover {
+  background: #217a93;
+  color: #fff;
 }
 
 /* Update the hero content animation */
@@ -524,10 +535,9 @@ nav.scrolled {
   user-select: none;
 }
 
-.skill-category .skill-tag:hover {
-  background: var(--primary);
-  color: #fff;
-  transform: translateY(-2px) scale(1.06);
+.dark-mode .skill-category .skill-tag:hover {
+  background: #f0f0f0;
+  color: #222;
 }
 
 .skill-category .skill-tag i {
@@ -635,6 +645,22 @@ nav.scrolled {
 .project-filter button:hover,
 .project-filter button.active {
   background: var(--primary);
+  color: white;
+}
+
+.dark-mode .project-filter button {
+  background: transparent;
+  border: 1px solid #2798b7;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2798b7;
+}
+
+.dark-mode .project-filter button:hover,
+.dark-mode .project-filter button.active {
+  background: #2798b7;
   color: white;
 }
 
@@ -891,6 +917,36 @@ input:focus, textarea:focus {
 textarea {
   min-height: 150px;
   resize: vertical;
+}
+
+.send-btn {
+  background: var(--success);
+  color: white;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.send-btn:hover {
+  background: #218838;
+  color: white;
+}
+
+.dark-mode .send-btn {
+  background: #2798b7;
+  color: white;
+}
+
+.dark-mode .send-btn:hover {
+  background: #217a93;
+  color: white;
 }
 
 /* Alert notification */
@@ -1296,6 +1352,16 @@ footer {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode .scroll-top {
+  background: #2798b7;
+  color: white;
+}
+
+.dark-mode .scroll-top:hover {
+  background: #217a93;
+  color: white;
+}
+
 .scroll-top.active {
   transform: translateY(0);
   pointer-events: auto;
@@ -1674,6 +1740,11 @@ s
   background: var(--primary);
   color: white;
   transform: translateY(-2px) scale(1.04);
+}
+
+.dark-mode .skill-tag:hover {
+  background: #f0f0f0;
+  color: #222;
 }
 
 @media (max-width: 992px) {
