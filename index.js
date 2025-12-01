@@ -412,3 +412,29 @@ function setupResumeDownload() {
 
 // Call this function when the DOM is loaded
 document.addEventListener('DOMContentLoaded', setupResumeDownload);
+
+// Remove any animation classes from the profile image after DOM ready / AOS initialization to ensure no JS re-adds them.
+document.addEventListener('DOMContentLoaded', () => {
+  // Ensure AOS is initialized first if needed
+  if (typeof AOS !== 'undefined' && AOS.init) {
+    AOS.init();
+  }
+
+  // Remove animate.css / AOS classes and disable style animations for profile image
+  const profileImg = document.querySelector('.profile-img');
+  if (profileImg) {
+    profileImg.classList.remove('animate__animated', 'animate__fadeIn', 'animate__zoomIn', 'aos-animate');
+    profileImg.style.animation = 'none';
+    profileImg.style.transition = 'none';
+    profileImg.style.transform = 'none';
+  }
+
+  // Also make sure container is unaffected
+  const profileContainer = document.querySelector('.profile-img-container');
+  if (profileContainer) {
+    profileContainer.classList.remove('animate__animated', 'aos-animate');
+    profileContainer.style.animation = 'none';
+    profileContainer.style.transition = 'none';
+    profileContainer.style.transform = 'none';
+  }
+});
